@@ -1,7 +1,7 @@
-# Wiki Summary App
+# Wiki Search App
 
 ## Overview
-The **Wiki Summary App** is a FastAPI-based application that allows users to search for Wikipedia articles, save them, and automatically generate relevant tags using the Gemini Pro language model. This app includes features like user registration, login, searching, saving articles, and updating tags for saved content.
+The **Wiki Search App** is a FastAPI-based application that allows users to search for Wikipedia articles, save them, and automatically generate relevant tags using the Gemini Pro language model. This app includes features like user registration, login, searching, saving articles, and updating tags for saved content.
 
 **Project GitHub**: [Wiki Search]
 
