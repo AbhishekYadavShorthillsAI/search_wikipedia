@@ -66,7 +66,7 @@ def fetch_wikipedia_articles(query):
             articles.append({
                 "title": title,
                 "link": link,
-                "content": plain_text[:500],  # Store only the first 500 characters of the content
+                "content": plain_text[:100],  # Store only the first 500 characters of the content
                 "tags": tags
             })
     
