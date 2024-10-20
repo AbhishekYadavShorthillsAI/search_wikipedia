@@ -153,7 +153,6 @@ wiki_summary_app/
     "content": "Python is a high-level, general-purpose programming language...",
     "tags": "programming, high-level language, interpreted language"
   }
-  // ... other saved articles
 ]
 ```
 
