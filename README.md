@@ -101,6 +101,8 @@ wiki_summary_app/
 **URL**: `/search?query=python programming`  
 **Method**: `GET`  
 
+**Headers**: `Authorization: Bearer <access_token>`  
+
 **Response**:
 ```json
 [
@@ -114,27 +116,34 @@ wiki_summary_app/
 ```
 
 ### Save Article
-**URL**: `/save_article`  
+**URL**: `/save_articles`  
 **Method**: `POST`  
 
 **Headers**: `Authorization: Bearer <access_token>`  
 
 **Request Body**:
 ```json
-{
-  "title": "Python (programming language)",
-  "link": "link",
-  "content": "Python is a high-level, general-purpose programming language...",
-  "tags": "programming, high-level language, interpreted language"
-}
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Python (programming language)",
+    "link": "link",
+    "content": "Python is a high-level, general-purpose programming language...",
+    "tags": ["programming", "scripting", "object-oriented"]
+  }
+]
 ```
 
 **Response**:
 ```json
-{
-  "message": "Article saved successfully",
-  "tags": "programming, high-level language, interpreted language"
-}
+[
+  {
+    "title": "Python (programming language)",
+    "link": "link",
+    "content": "Python is a high-level, general-purpose programming language...",
+    "tags": ["programming", "scripting", "object-oriented"]
+  }
+]
 ```
 
 ### Get Saved Articles
@@ -151,7 +160,7 @@ wiki_summary_app/
     "title": "Python (programming language)",
     "link": "link",
     "content": "Python is a high-level, general-purpose programming language...",
-    "tags": "programming, high-level language, interpreted language"
+    "tags":  ["object-oriented"]
   }
 ]
 ```
@@ -165,7 +174,7 @@ wiki_summary_app/
 **Request Body**:
 ```json
 {
-  "tags": "programming, scripting, object-oriented"
+  "tags": ["programming", "scripting", "object-oriented"]
 }
 ```
 
