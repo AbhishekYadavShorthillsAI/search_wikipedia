@@ -19,17 +19,33 @@ class User:
 
 class SavedArticle:
     @staticmethod
-    def create(article_id: str,title: str, summary: str, tags: str, user_id: str):
+    def create(article_id: str,title: str, link: str, content: str, tags: str, user_id: str):
         execute_non_query(
-            "INSERT INTO saved_articles (id, title, summary, tags, user_id) VALUES (%s, %s, %s, %s, %s)",
-            (article_id, title, summary, tags, user_id)
+            "INSERT INTO saved_articles (id, title, link, content, tags, user_id) VALUES (%s, %s, %s, %s, %s, %s)",
+            (article_id, title, link, content, tags, user_id)
         )
 
     @staticmethod
     def get_by_user(user_id: str):
-        return execute_query(
-            "SELECT id, title, summary, tags FROM saved_articles WHERE user_id = %s", (user_id,)
+        articles = execute_query(
+            "SELECT id, title, link, content, tags FROM saved_articles WHERE user_id = %s", (user_id,)
         )
+
+        if not articles:
+            return list()
+
+        formatted_articles = list()
+        for article in articles:
+            formatted_article = {
+                "article_id": article[0],
+                "title": article[1],
+                "link": article[2],
+                "content": article[3],
+                "tags": article[4]
+            }
+            formatted_articles.append(formatted_article)
+
+        return formatted_articles
 
     @staticmethod
     def update_tags(article_id: str, tags: str):

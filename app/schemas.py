@@ -18,4 +18,4 @@ class ArticleCreate(BaseModel):
     tags: list
 
 class ArticleUpdate(BaseModel):
-    tags: str
+    tags: list

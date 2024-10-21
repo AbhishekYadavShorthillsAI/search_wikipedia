@@ -40,7 +40,7 @@ def fetch_wikipedia_articles(query):
         "srsearch": query,
         "format": "json",
         "utf8": 1,
-        "srlimit": 5,  # Limit to 5 results
+        "srlimit": 3,  # Limit to 5 results
     }
 
     response = requests.get(url, params=params)
@@ -60,13 +60,13 @@ def fetch_wikipedia_articles(query):
             article_content = get_article_content(pageid)
             plain_text = extract_plain_text(article_content) if article_content else "Content not available."
 
-            tags = generate_tags(title=title, content=plain_text)
+            tags = generate_tags(title=title, content=plain_text[:100])
 
             # Append article details to the list
             articles.append({
                 "title": title,
                 "link": link,
-                "content": plain_text[:100],  # Store only the first 500 characters of the content
+                "content": plain_text[:200],  # Store only the first 100 characters of the content
                 "tags": tags
             })
     

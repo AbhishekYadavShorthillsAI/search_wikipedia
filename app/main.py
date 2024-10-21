@@ -4,12 +4,9 @@ from app.database import create_tables
 
 app = FastAPI()
 
-# # Create tables on startup
-# @app.on_event("startup")
-# async def startup_event():
-#     
-
+# Create tables if not exits on startup
 create_tables()
+
 # Include API routes
 app.include_router(endpoints.router)
 
