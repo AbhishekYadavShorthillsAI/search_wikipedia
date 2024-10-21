@@ -125,7 +125,6 @@ wiki_summary_app/
 ```json
 [
   {
-    "id": "550e8400-e29b-41d4-a716-446655440000",
     "title": "Python (programming language)",
     "link": "link",
     "content": "Python is a high-level, general-purpose programming language...",
@@ -138,6 +137,7 @@ wiki_summary_app/
 ```json
 [
   {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
     "title": "Python (programming language)",
     "link": "link",
     "content": "Python is a high-level, general-purpose programming language...",
@@ -160,7 +160,7 @@ wiki_summary_app/
     "title": "Python (programming language)",
     "link": "link",
     "content": "Python is a high-level, general-purpose programming language...",
-    "tags":  ["object-oriented"]
+    "tags":  ["programming", "scripting", "object-oriented"]
   }
 ]
 ```
@@ -174,7 +174,7 @@ wiki_summary_app/
 **Request Body**:
 ```json
 {
-  "tags": ["programming", "scripting", "object-oriented"]
+  "tags": ["sample_tag"]
 }
 ```
 
