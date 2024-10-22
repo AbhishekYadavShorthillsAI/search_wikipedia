@@ -110,7 +110,7 @@ wiki_summary_app/
     "title": "Python (programming language)",
     "link": "link",
     "content": "Python is a high-level, general-purpose programming language...",
-    "tags": "programming, high-level language, interpreted language"
+    "tags": ["programming", "scripting", "object-oriented"]
   }
 ]
 ```
